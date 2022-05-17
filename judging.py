@@ -47,7 +47,7 @@ def checkEqual(problem, bat, case, judgeNum, storage_client):
         code = check.wait(10)
 
         if code != 0:
-            return (False, "Error: Checker took too long to execute")
+            return (False, "Error: Checker encountered an error or took too long to execute.")
 
         myOutput.flush()
         myOutput.close()
