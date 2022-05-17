@@ -44,10 +44,10 @@ def checkEqual(problem, bat, case, judgeNum, storage_client):
         cleanChecker("Judge" + str(judgeNum) + "/checker.py", str(judgeNum))
 
         check = subprocess.Popen("python3 Judge" + str(judgeNum) + "/checker.py Judge" + str(judgeNum) + "/data.in Judge" + str(judgeNum) + "/data.out", stdout=myOutput, shell=True)
-        code = check.wait(3)
+        code = check.wait(10)
 
         if code != 0:
-            return False
+            return (False, "Error: Checker took too long to execute")
 
         myOutput.flush()
         myOutput.close()
